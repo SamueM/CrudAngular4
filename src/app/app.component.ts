@@ -14,6 +14,8 @@ export class AppComponent {
     {'ID':'3', 'nombre':'Lucia','posicion':'Manager'}
   ]
 
+  modelo = {} ;
+
   // Añade un empleado a array
   addEmpleado():void{
     

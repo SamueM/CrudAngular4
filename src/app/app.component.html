@@ -1,12 +1,57 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container mt-2 hoja">
+  <div class="row d-flex justify-content-around">
+    <div class="col-md-2">
+      <img alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
     </div>
-    <div class="col-md-9">
+    <div class="col-md-5 mt-5">
       <h1>
         {{ title }}
       </h1>
-    </div>    
+    </div>
+    <div class="col-md-3 mt-4">
+      <div class="alert alert-success">
+        <strong>Success!</strong> La operacion se realizo correctamente
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-around mt-3 mb-3">
+    <div class="col-md-5 d-flex flex-column">
+      <h3>Introduccir datos:</h3>
+      <form>
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input class="form-control" type="text" placeholder="Nombre" ([ngModel])="modelo.nombreAdd">
+        </div>
+        <div class="form-group">
+          <label>Puesto:</label>
+          <input class="form-control" type="text" placeholder="Puesto" ([ngModel])="modelo.puestoAdd">
+        </div>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
+    <div class="col-md-5 d-flex flex-column">
+      <h3>Visualizar datos:</h3>
+
+    </div>
+  </div>
+  <div class="row d-flex justify-content-around mt-3 mb-3 pb-3">
+    <div class="col-md-5 d-flex flex-column">
+      <h3>Editar/Borrar</h3>
+
+    </div>
+    <div class="col-md-5 d-flex flex-column">
+      <h3>Formulario de edicion:</h3>
+      <form>
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input class="form-control" type="text" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <label>Puesto:</label>
+          <input class="form-control" type="text" placeholder="Puesto">
+        </div>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
   </div>
 </div>
