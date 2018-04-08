@@ -22,12 +22,14 @@ export class AppComponent {
   }
 
   // Borra un empleado del array
-  deleteEmpleado():boolean{
+  deleteEmpleado(id:string):boolean{
+    alert("Pruebas: "+id);
     return true ;
   }
 
   // Coge los datos para ser editados
-  editEmpleado():void{
+  editEmpleado(id:string):void{
+    alert("Pruebas: "+id);
 
   }
 

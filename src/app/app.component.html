@@ -11,6 +11,9 @@
     <div class="col-md-3 mt-4">
       <div class="alert alert-success">
         <strong>Success!</strong> La operacion se realizo correctamente
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
   </div>
@@ -31,13 +34,44 @@
     </div>
     <div class="col-md-5 d-flex flex-column">
       <h3>Visualizar datos:</h3>
-
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Puesto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of empleado">
+            <td>{{emp.nombre}}</td>
+            <td>{{emp.posicion}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="row d-flex justify-content-around mt-3 mb-3 pb-3">
     <div class="col-md-5 d-flex flex-column">
       <h3>Editar/Borrar</h3>
-
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of empleado">
+            <td>{{emp.nombre}}</td>
+            <td>{{emp.posicion}}</td>
+            <td>
+              <div (click)="deleteEmpleado(emp.ID)" class="btn btn-info">Editar</div>
+              <div (click)="editEmpleado(emp.ID)" class="btn btn-danger">Borrar</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="col-md-5 d-flex flex-column">
       <h3>Formulario de edicion:</h3>
@@ -50,7 +84,7 @@
           <label>Puesto:</label>
           <input class="form-control" type="text" placeholder="Puesto">
         </div>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary">Editar</button>
       </form>
     </div>
   </div>
