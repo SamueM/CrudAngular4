@@ -19,7 +19,13 @@ export class AppComponent {
     {'ID':'3', 'nombre':'Lucia','posicion':'Manager'}
   ]
 
-  modelo = {nombreAdd: '', puestoAdd:''} ;
+  modelo = { 
+    nombreAdd: '',
+    puestoAdd:'' ,
+    editarNombre : '' ,
+    editarPuesto : '' ,
+    editarId : ''
+  } ;
 
   // Añade un empleado a array
   addEmpleado():void{
@@ -29,7 +35,7 @@ export class AppComponent {
     if(this.modelo.nombreAdd !='' && this.modelo.puestoAdd !=''){
       console.log(' ================ Guardando ================ ');
       this.empleado.push({
-        'ID': this.empleado.length+'' ,
+        'ID': this.empleado.length+1+'' ,
         'nombre': this.modelo.nombreAdd,
         'posicion': this.modelo.puestoAdd
       });
@@ -49,13 +55,32 @@ export class AppComponent {
 
   // Coge los datos para ser editados
   editEmpleado(id:string):void{
-    alert("Pruebas: "+id);
-
+    let e ;
+    this.empleado.forEach(function(valor){
+      if(id == valor.ID){
+        e = valor ;
+      }
+    });
+    this.modelo.editarNombre = e.nombre ;
+    this.modelo.editarPuesto = e.posicion ;
+    this.modelo.editarId = e.ID ;
   }
 
   // Actualiza los datos 
   reemplazarEmpleado():void{
-
+    if(this.modelo.editarNombre != '' && this.modelo.editarPuesto != ''){
+      for(var i = 0 ; i < this.empleado.length ;i++){
+        console.log( this.empleado[i].ID +" "+ this.modelo.editarId );
+        if(this.empleado[i].ID == this.modelo.editarId ){
+          this.empleado[i].ID = this.modelo.editarId ;
+          this.empleado[i].nombre = this.modelo.editarNombre ;
+          this.empleado[i].posicion = this.modelo.editarPuesto ;
+        }
+      }
+      this.modelo.editarNombre = '' ;
+      this.modelo.editarPuesto = '' ;
+      this.modelo.editarId = '' ;
+    }
   }
 
   // Ocultar NotificacionSuccess

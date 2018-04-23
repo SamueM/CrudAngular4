@@ -66,8 +66,8 @@
             <td>{{emp.nombre}}</td>
             <td>{{emp.posicion}}</td>
             <td>
-              <div (click)="deleteEmpleado(emp.ID)" class="btn btn-info">Editar</div>
-              <div (click)="editEmpleado(emp.ID)" class="btn btn-danger">Borrar</div>
+              <div (click)="editEmpleado(emp.ID)" class="btn btn-info">Editar</div>
+              <div (click)="deleteEmpleado(emp.ID)" class="btn btn-danger">Borrar</div>
             </td>
           </tr>
         </tbody>
@@ -78,13 +78,14 @@
       <form>
         <div class="form-group">
           <label>Nombre:</label>
-          <input class="form-control" type="text" placeholder="Nombre">
+          <input class="form-control" type="text" name="nombreEditar" placeholder="Nombre" [(ngModel)]="modelo.editarNombre">
         </div>
         <div class="form-group">
           <label>Puesto:</label>
-          <input class="form-control" type="text" placeholder="Puesto">
+          <input class="form-control" type="text" name="puestoEditar" placeholder="Puesto" [(ngModel)]="modelo.editarPuesto">
+          <input class="form-control" type="hidden" name="idEditar" [(ngModel)]="modelo.editarId">
         </div>
-        <button type="button" class="btn btn-primary">Editar</button>
+        <button type="button" class="btn btn-primary" (click)="reemplazarEmpleado()" >Editar</button>
       </form>
     </div>
   </div>
