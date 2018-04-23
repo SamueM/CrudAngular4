@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 // Importante para acceder a la funcionalidad de angular en los formularios
 import { FormsModule } from '@angular/forms' ;
 
+// Traemos nuestro componente al esqueleto de la aplicacion
 import { AppComponent } from './app.component';
 
 
