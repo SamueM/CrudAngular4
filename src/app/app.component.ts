@@ -49,7 +49,14 @@ export class AppComponent {
 
   // Borra un empleado del array
   deleteEmpleado(id:string):boolean{
-    alert("Pruebas: "+id);
+    console.log("Pruebas: "+id);
+    var IDaBorrar:number ;
+    for(var i = 0 ; i < this.empleado.length ;i++){
+      if(this.empleado[i].ID == id ){
+        IDaBorrar = i ;
+      }
+    }
+    this.empleado.splice(IDaBorrar,1);
     return true ;
   }
 
